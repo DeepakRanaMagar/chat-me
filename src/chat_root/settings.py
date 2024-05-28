@@ -32,11 +32,18 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django.contrib.admin",
+
+    
+    "daphne", #django-channel['daphne'] lib
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "channels", #channels libs
+
+    "chat.apps.ChatConfig", #Django apps
+
 ]
 
 MIDDLEWARE = [
@@ -67,8 +74,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "chat_root.wsgi.application"
-
+# WSGI_APPLICATION = "chat_root.wsgi.application"
+'''
+    To point to that routing object as the root application
+'''
+ASGI_APPLICATION = "chat_root.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

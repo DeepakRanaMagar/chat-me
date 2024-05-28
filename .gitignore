@@ -7,9 +7,10 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-
+db.sqlite3
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
