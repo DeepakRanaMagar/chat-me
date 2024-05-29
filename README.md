@@ -1,8 +1,7 @@
 # chat-me
-# chat-me
 
 ## Description
-This project is a Chat application built on Django.
+chat-me is a Test Chat application built on Django.
 
 ## Requirements
 - Python 3.x
