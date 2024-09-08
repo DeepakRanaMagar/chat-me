@@ -51,7 +51,6 @@ h1 {
   margin-left: auto;
 }
 
-/* Receiver message - aligned to the left */
 .receiver {
   align-self: flex-start;
   background-color: #ffccbc;
