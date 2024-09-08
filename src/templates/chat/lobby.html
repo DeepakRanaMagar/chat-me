@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat with Django Channels</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'chat/css/styles.css' %}">
+
 </head>
 <body>
   
@@ -15,37 +18,8 @@
   </form>
 
   <div id="messages"></div>
-  <script>
   
-    let url = `ws://${window.location.host}/ws/socket-server/`;
-  
-    const chatSocket = new WebSocket(url);
-  
-    chatSocket.onmessage = function (e) {
-      let data = JSON.parse(e.data)
-      console.log('Data: ', data)
+  <script src="{% static 'chat/js/scripts.js' %}"></script>
 
-      if (data.type === 'chat'){
-        let message = document.getElementById('messages')
-        message.insertAdjacentHTML('beforeend', `<div>
-            <p>${data.message}</p>
-          </div>`)
-      }
-    }
-    
-    let form = document.getElementById('form')
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault()
-      let message = e.target.message.value
-      chatSocket.send(JSON.stringify(
-          {
-          'message': message,
-          }
-        )
-      )
-      form.reset()
-    })
-  </script>
 </body>
 </html>
