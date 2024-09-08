@@ -2,24 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat with Django Channels</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'chat/css/styles.css' %}">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'chat/css/styles.css' %}">
 </head>
 <body>
-  
-  <h1>Chat Room Lobby</h1>
-  
-  <form id="form">
-    <input type="text" name="message"/>
-  </form>
 
-  <div id="messages"></div>
-  
-  <script src="{% static 'chat/js/scripts.js' %}"></script>
+    <!-- Chat Room Container -->
+    <div class="chat-room">
+        <h1>Chatext</h1>
+
+        <!-- Chat Messages Container -->
+        <div id="messages" class="message-container">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="form">
+            <input type="text" name="message" id="message-input" placeholder="Type your message..." autocomplete="off" required />
+            <button type="submit" class="send-button">Send</button>
+        </form>
+    </div>
+
+    <!-- Link to external JS file -->
+    <script src="{% static 'chat/js/scripts.js' %}"></script>
 
 </body>
 </html>
